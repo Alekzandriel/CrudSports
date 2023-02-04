@@ -1,0 +1,29 @@
+<table class="table table-hover table-striped">
+    <thead class="bg dark text-black">
+        <tr>
+            <th>Equipo</th>
+            <th>Fecha Creacion</th>
+            <th>Campeonatos Ganados</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+
+<tbody>
+
+<tr *ngFor="let post of Posts">
+    <td>{{post.title}}</td>
+    <td>{{post.content}}</td>
+    <td>{{post.author}}</td>
+    <td>
+        <button routerLink="/edit/{{post.id}}" class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i></button><td>
+        <button (click)="deleteRow(post)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="d-grip gap-2 mt-4">    
+    <a routerLink="/create" class="btn btn-primary" type="button">Nuevo</a>
+</div>
